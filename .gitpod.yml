@@ -8,11 +8,10 @@ tasks:
     init: gp sync-await database-running
     command: |
       docker start postgresDB15 &&
-      docker ps &&
       sleep 3s &&
       echo "Postgres is running at localhost port 5432, starting session" && 
       gp sync-done database-started &&
-      docker exec -it postgresDB15 -u postgres psql 
+      docker exec -it -u postgres postgresDB15 psql 
       
 ports:
 
@@ -23,4 +22,4 @@ ports:
 
 vscode:
   extensions:
-    - ms-ossdata.vscode-postgresql
+    - mtxr.sqltools
