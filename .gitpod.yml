@@ -1,0 +1,26 @@
+tasks:
+  - init: |
+      docker pull postgres:15.1
+      docker run -d -p 5432:5432 --name postgresDB15 -e POSTGRES_PASSWORD=welkom01 postgres:15.1 &&
+      # open the readme.md document in VS code; note: thanks to the configuration in .vscode/settings.json, the document opens in markdown preview mode
+      gp open README.md
+  - name: start container and run a session as postgres owner
+    init: gp sync-await database-running
+    command: |
+      docker start postgresDB15 &&
+      docker ps &&
+      sleep 3s &&
+      echo "Postgres is running at localhost port 5432, starting session" && 
+      gp sync-done database-started &&
+      docker exec -it postgresDB15 -u postgres psql 
+      
+ports:
+
+  # Postgres main port
+  - port: 5432
+    onOpen: ignore
+    visibility: private
+
+vscode:
+  extensions:
+    - ms-ossdata.vscode-postgresql
