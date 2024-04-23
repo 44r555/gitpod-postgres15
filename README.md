@@ -4,8 +4,8 @@ GitPod demo repository with PostgreSQL
 
 Inspired by Lucas Jellema's work at https://github.com/lucasjellema/gitpod-oracle-database.git
 
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/44r555/gitpod-postgres15)
-[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/martijnpronkAMIS/gitpod-postgres-database)
+[![Open in Gitpod]✅ (https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true&editor=code&workspaceClass=g1-large#https://github.com/44r555/gitpod-postgres15)
+~[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/#https://github.com/martijnpronkAMIS/gitpod-postgres-database)~
 
 PostgreSQL 15 database running in a docker container called postgresDB15.
 The database is initialized, VS code extension added to allow connecting to that database. 
